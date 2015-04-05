@@ -12,7 +12,7 @@ RUN echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/s
 RUN echo "deb http://debmon.org/debmon debmon-wheezy main" >> /etc/apt/sources.list
 RUN apt-get -qq update
 # Install icinga2 and nsca so we can send log events upstream
-RUN apt-get -qqy install --no-install-recommends icinga2 nagios-plugins nsca
+RUN apt-get -y install --no-install-recommends icinga2 nagios-plugins nsca
 # Clean up some.
 RUN apt-get clean
 # To install feature add lines like these in your final Dockerfile
