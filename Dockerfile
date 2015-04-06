@@ -10,6 +10,7 @@ ENV DEBIAN_FRONTEND noninteractive
 # Add Debian Backports and Debmon repositories and update package lists again.
 #RUN echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list
 #RUN echo "deb http://debmon.org/debmon debmon-wheezy main" >> /etc/apt/sources.list
+add-apt-repository ppa:formorer/icinga
 RUN apt-get -qq update
 # Install icinga2 and nsca so we can send log events upstream
 RUN apt-get -y install icinga2
