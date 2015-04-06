@@ -6,13 +6,13 @@ ENV ICINGASH_UPDATED 20150405
 ENV DEBIAN_FRONTEND noninteractive
 
 # Add debmon repository key to APT.
-RUN wget -O - http://debmon.org/debmon/repo.key 2>/dev/null | apt-key add -
+#RUN wget -O - http://debmon.org/debmon/repo.key 2>/dev/null | apt-key add -
 # Add Debian Backports and Debmon repositories and update package lists again.
-RUN echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list
-RUN echo "deb http://debmon.org/debmon debmon-wheezy main" >> /etc/apt/sources.list
+#RUN echo "deb http://http.debian.net/debian wheezy-backports main" >> /etc/apt/sources.list
+#RUN echo "deb http://debmon.org/debmon debmon-wheezy main" >> /etc/apt/sources.list
 RUN apt-get -qq update
 # Install icinga2 and nsca so we can send log events upstream
-RUN apt-get -y install icinga2-bin
+RUN apt-get -y install icinga2
 RUN apt-get -y install --no-install-recommends nagios-plugins nsca
 # Clean up some.
 RUN apt-get clean
