@@ -2,7 +2,7 @@ FROM    pblittle/docker-logstash
 MAINTAINER Josh Cox <josh 'at' webhosting coop>
 
 # Environment variables
-ENV ICINGASH_UPDATED 20150627
+ENV ICINGASH_UPDATED 20150628
 ENV DEBIAN_FRONTEND noninteractive
 
 # Add debmon repository key to APT.
